@@ -893,6 +893,8 @@ class matching {
         return null;
       }
     }
+
+    return null;
   }
 
   static Map<String, int>? map_ints_to_dm(List<int> ints) {
