@@ -16,3 +16,8 @@ tmux-*.log
 launch.json
 
 
+
+# Dart
+.dart_tool/
+build/
+doc/api/
