@@ -37,16 +37,10 @@ class feedback {
     feedback = get_match_feedback(longest_match, sequence.length == 1);
     final extra_feedback =
         'Add another word or two. Uncommon words are better.';
-    if (feedback != null) {
-      feedback.suggestions!.insert(0, extra_feedback);
-      if (feedback.warning == null) {
-        feedback.warning = '';
-      }
-    } else
-      feedback = Feedback(
-        warning: '',
-        suggestions: [extra_feedback],
-      );
+    feedback.suggestions!.insert(0, extra_feedback);
+    if (feedback.warning == null) {
+      feedback.warning = '';
+    }
     return feedback;
   }
 
@@ -57,7 +51,6 @@ class feedback {
         return get_dictionary_match_feedback(match, is_sole_match);
 
       case 'spatial':
-        String layout = match.graph!.toUpperCase();
         if (match.turns == 1) {
           warning = 'Straight rows of keys are easy to guess';
         } else {
@@ -71,7 +64,8 @@ class feedback {
         if (match.base_token!.length == 1) {
           warning = 'Repeats like "aaa" are easy to guess';
         } else {
-          'Repeats like "abcabcabc" are only slightly harder to guess than "abc"';
+          warning =
+              'Repeats like "abcabcabc" are only slightly harder to guess than "abc"';
         }
         return Feedback(
             warning: warning,
