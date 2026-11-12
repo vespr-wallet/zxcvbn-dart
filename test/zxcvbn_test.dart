@@ -1,5 +1,4 @@
 import 'package:test/test.dart';
-import 'package:zxcvbn/src/result.dart';
 import 'package:zxcvbn/zxcvbn.dart';
 
 void main() {
