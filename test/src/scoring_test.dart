@@ -262,10 +262,13 @@ void main() {
     expect(scoring.regex_guesses(match), (scoring.REFERENCE_YEAR - 1972).abs(),
         reason: msg);
 
+    // A year within MIN_YEAR_SPACE of REFERENCE_YEAR (the current year), so
+    // the test doesn't go stale as time passes.
+    final recentYear = (scoring.REFERENCE_YEAR - 5).toString();
     match = PasswordMatch()
-      ..token = '2005'
+      ..token = recentYear
       ..regex_name = 'recent_year'
-      ..regex_match = ['2005'];
+      ..regex_match = [recentYear];
     msg = "guesses of MIN_YEAR_SPACE for a year close to REFERENCE_YEAR";
     expect(scoring.regex_guesses(match), scoring.MIN_YEAR_SPACE, reason: msg);
   });

@@ -222,24 +222,6 @@ class matching {
 
     //
     int compare(List l1, List l2) {
-      // null at the end
-      if (l1 == null) {
-        if (l2 == null) {
-          return 0;
-        }
-        return 1;
-      } else if (l2 == null) {
-        return -1;
-      }
-
-      // convert to list
-      if (l1 is! List) {
-        l1 = [l1];
-      }
-      if (l2 is! List) {
-        l2 = [l2];
-      }
-
       // empty at the beginning
       if (l1.isEmpty) {
         if (l2.isEmpty) {
@@ -893,6 +875,8 @@ class matching {
         return null;
       }
     }
+
+    return null;
   }
 
   static Map<String, int>? map_ints_to_dm(List<int> ints) {

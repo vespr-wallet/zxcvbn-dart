@@ -1,4 +1,0 @@
-language: dart
-dart:
-  - "2.12.4"
-script: pub run test
