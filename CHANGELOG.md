@@ -3,6 +3,7 @@
 - Fixed: `feedback.get_match_feedback` returns the "Repeats like \"abcabcabc\" are only slightly harder to guess than \"abc\"" warning for multi-character repeats. The message was a bare string statement, so these repeats got no warning. Scores are unchanged.
 - Removed dead null and type checks the analyzer flagged (`unnecessary_null_comparison`, `unnecessary_type_check`, an unused local). No behaviour change.
 - Tooling: GitHub Actions CI (`dart analyze --fatal-infos`, `dart test`) replaces the old Travis config. `.gitignore` covers `.dart_tool/` and `build/`.
+- Tooling: CI fails on unformatted Dart code (`dart format --set-exit-if-changed`); formatted `frequency_lists.dart`, `matching.dart` and `scoring.dart` (whitespace only, no behaviour change)
 
 # 1.0.1
 

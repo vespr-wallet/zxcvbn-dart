@@ -292,7 +292,8 @@ class scoring {
   }
 
   static double bruteforce_guesses(PasswordMatch match) {
-    double guesses = Math.pow(BRUTEFORCE_CARDINALITY, match.token!.length) as double;
+    double guesses =
+        Math.pow(BRUTEFORCE_CARDINALITY, match.token!.length) as double;
     // small detail: make bruteforce matches at minimum one guess bigger than smallest allowed
     // submatch guesses, such that non-bruteforce submatches over the same [i..j] take precedence.
     double min_guesses;

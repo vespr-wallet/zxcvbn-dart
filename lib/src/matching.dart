@@ -86,8 +86,8 @@ class matching {
 
   static List<PasswordMatch> sorted(List<PasswordMatch> matches) {
     // // sort on i primary, j secondary
-    matches
-        .sort((m1, m2) => (m1.i! - m2.i!) != 0 ? (m1.i! - m2.i!) : (m1.j! - m2.j!));
+    matches.sort(
+        (m1, m2) => (m1.i! - m2.i!) != 0 ? (m1.i! - m2.i!) : (m1.j! - m2.j!));
     return matches;
   }
 
